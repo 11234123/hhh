@@ -62,9 +62,9 @@ def get_weather(region):
   
     response = get(weather_url, headers=headers).json()
    #最高温度
-    tempmax = response[0]["daily"]["tempMax"] + u"\N{DEGREE SIGN}" + "C"
+    tempmax = response["daily"][0]["tempMax"] + u"\N{DEGREE SIGN}" + "C"
    #最低温度
-    tempmin = response[0]["daily"]["tempMin"] + u"\N{DEGREE SIGN}" + "C"
+    tempmin = response["daily"][0]["tempMin"] + u"\N{DEGREE SIGN}" + "C"
     return weather, temp, wind_dir, tempmax, tempmin
 
  
