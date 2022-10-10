@@ -60,7 +60,7 @@ def get_weather(region):
     wind_dir = response["now"]["windDir"]
     w_url = "https://devapi.qweather.com/v7/weather/3d?location={}&key={}".format(location_id, key)
   
-    response = get(weather_url, headers=headers).json()
+    response = get(w_url, headers=headers).json()
    #最高温度
     tempmax = response["daily"][0]["tempMax"] + u"\N{DEGREE SIGN}" + "C"
    #最低温度
