@@ -58,13 +58,13 @@ def get_weather(region):
     temp = response["now"]["temp"] + u"\N{DEGREE SIGN}" + "C"
     # 风向
     wind_dir = response["now"]["windDir"]
-        w_url = "https://api.qweather.com/v7/weather/3d?location={}&key={}".format(location_id, key)
+    w_url = "https://api.qweather.com/v7/weather/3d?location={}&key={}".format(location_id, key)
   
-   response = get(weather_url, headers=headers).json()
+    response = get(weather_url, headers=headers).json()
    #最高温度
-   tempmax = response["daily"]["tempMax"] + u"\N{DEGREE SIGN}" + "C"
+    tempmax = response["daily"]["tempMax"] + u"\N{DEGREE SIGN}" + "C"
    #最低温度
-   tempmin = response["daily"]["tempMin"] + u"\N{DEGREE SIGN}" + "C"
+    tempmin = response["daily"]["tempMin"] + u"\N{DEGREE SIGN}" + "C"
     return weather, temp, wind_dir, tempmax, tempmin
 
  
